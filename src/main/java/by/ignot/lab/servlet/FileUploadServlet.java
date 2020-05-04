@@ -1,4 +1,4 @@
-package by.ignot.labs.servlet;
+package by.ignot.lab.servlet;
 
 import java.io.File;
 import java.io.IOException;
