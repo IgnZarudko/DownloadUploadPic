@@ -21,7 +21,13 @@
     <h1>File Upload Status</h1>
     <table class="bordered_table">
         <thead>
-        <tr align="center"><th>File Name</th><th>File Size</th><th>Upload Status</th><th>Action</th></tr>
+        <tr align="center">
+            <th>File Name</th>
+            <th>File Size</th>
+            <th>Upload Status</th>
+            <th>Action</th>
+            <th>Picture</th>
+        </tr>
         </thead>
         <tbody>
         <% List<UploadDetail> uploadDetails = (List<UploadDetail>)request.getAttribute("uploadedFiles");
@@ -32,6 +38,7 @@
             <td align="center"><span id="fileSize"><%=uploadDetails.get(i).getFileSize() %> KB</span></td>
             <td align="center"><span id="fileuploadStatus"><%=uploadDetails.get(i).getUploadStatus() %></span></td>
             <td align="center"><span id="fileDownload"><a id="downloadLink" class="hyperLink" href="<%=request.getContextPath()%>/downloadServlet?fileName=<%=uploadDetails.get(i).getFileName() %>">Download</a></span></td>
+            <td align="center"><img src="<%=request.getContextPath()%>/downloadServlet?fileName=<%=uploadDetails.get(i).getFileName() %>" height="100px"> </td>
         </tr>
         <% } %>
         </tbody>
